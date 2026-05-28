@@ -1,0 +1,228 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Background (optional if used with home bg) */
+body {
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+/* === Two-Column Row for Passwords === */
+.row_fields {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.half_input {
+  flex: 1;
+}
+
+/* === Side-by-Side Buttons === */
+.button_row {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.button_row .button {
+  flex: 1;
+}
+
+/* Make it responsive for small screens */
+@media (max-width: 480px) {
+  .row_fields {
+    flex-direction: column;
+  }
+
+  .button_row {
+    flex-direction: column;
+  }
+}
+
+/* Form Container */
+.form_container {
+  top: 70px;            /* push below header (adjust if header height changes) */
+  left: 50%;
+  transform: translateX(-50%) scale(1.2); /* only center horizontally */
+  background: #ffffff;
+  padding: 25px;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+  z-index: 200;
+  margin-bottom: 20%;
+  position: relative;
+}
+/* Smaller placeholder only for password & confirm password fields */
+input[name="password"]::placeholder,
+input[name="ConfirmPassword"]::placeholder {
+  font-size: 0.85rem;
+  padding-left: 0%;
+  color: #777;
+}
+
+.show.form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) scale(1); /* no vertical shift */
+}
+
+
+/* Switch login/signup */
+.signup_form {
+  display: none;
+}
+
+.active .signup_form {
+  display: block;
+}
+
+.active .login_form {
+  display: none;
+}
+
+/* Close button */
+.form_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #0b0217;
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.form_container h2 {
+  font-size: 22px;
+  color: #0b0217;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Input fields */
+.input_box {
+  position: relative;
+  margin-top: 25px;
+  width: 100%;
+  height: 40px;
+}
+
+.input_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 35px 0 30px;
+  color: #0b0217;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+  font-size: 14px;
+}
+
+.input_box input:focus {
+  border-color: #7d2ae8;
+}
+
+.input_box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #707070;
+}
+
+.input_box i.email,
+.input_box i.password,
+.input_box i.uil-user,
+.input_box i.uil-phone {
+  left: 0;
+}
+
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password,
+.input_box input:focus ~ i.uil-user,
+.input_box input:focus ~ i.uil-phone {
+  color: #7d2ae8;
+}
+
+.input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Buttons */
+.form_container .button {
+  background: #7d2ae8;
+  margin-top: 25px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form_container .button:hover {
+  background: #6821c4;
+}
+
+.form_container .button:active {
+transform: scale(0.98);
+}
+
+/* Google Button */
+.google_btn {
+background: #fff !important;
+border: 1px solid #ccc !important;
+color: #333 !important;
+margin-top: 12px !important;
+display: flex !important;
+align-items: center;
+justify-content: center;
+gap: 8px;
+font-weight: 500;
+border-radius: 10px;
+}
+
+.google_btn:hover {
+background: #f5f5f5 !important;
+}
+
+/* Login / Signup switch */
+.login_signup {
+font-size: 13px;
+text-align: center;
+margin-top: 18px;
+color: #333;
+}
+
+.login_signup a {
+color: #7d2ae8;
+font-weight: 500;
+cursor: pointer;
+}
+
+.login_signup a:hover {
+text-decoration: underline;
+}
